@@ -14,14 +14,27 @@ int main()
 
 	for (int p = 9; p > 0; p--)
 	{
-		cout << p;
-		for (int f = 0; f < 5; f++)
+		cout << p;							// eingaben sind z[1] = 9, z[2] = 7, z[3] = 5, z[4] = 2; z[5] = 9;
+											// 9*   *	
+											// 8.	.
+											// 7.*	.
+											// 6..	.
+											// 5..*	.
+											// 4...	.
+											// 3...	.
+											// 2...*.
+											// 1.....
+											//  12345
+		for (int f = 0; f < 5; f++)			//erst wird mit z[1] 9 gepfrüft, da z[1] == p (9) in dem Fall ist, wird ein * geschrieben
+											//dann wird mit z[2] 7 gepfrüft, da z[2] < p (9) ist, wird " " geschrieben
+											//dann wird mit z[3] 5 gepfrüft, da z[3] < p (9) ist, wird " " geschrieben
+											//dieser Vorgang wird 9 mal durchgeführt und jedesmal wird p um 1 kleiner, 8...7...6... usw.
 		{
-			if (int(z[f]) == (p))
+			if (int(z[f]) == (p))			//wenn z[1] == p ist, wird ein Sternchen * gemacht
 				cout << "*";
-			else if (int(z[f]) > (p))
-				cout << ".";
-			else if (int(z[f]) < (p))
+			else if (int(z[f]) > (p))		//wenn z[1] größer als p ist, wird ein Punkt gemacht							
+				cout << ".";				
+			else if (int(z[f]) < (p))		//wenn z[1] kleiner als p ist, wird " " geschrieben, also nichts
 				cout << " ";
 		}
 		cout << endl;
